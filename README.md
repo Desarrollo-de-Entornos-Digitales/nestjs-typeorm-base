@@ -114,3 +114,13 @@ erDiagram
 ```
 
 </details>
+
+## Base de Datos
+
+### Sembrado de Datos Iniciales (Seed)
+
+Para ejecutar el script de inserción de datos iniciales en la base de datos PostgreSQL alojada en Docker, ejecuta el siguiente comando:
+
+```bash
+docker compose exec -T db psql -U postgres -d mydatabase < db/scripts/inserts.sql
+```
