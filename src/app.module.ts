@@ -4,7 +4,6 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
@@ -24,9 +23,7 @@ import { AuthModule } from './auth/auth.module';
                     synchronize: configService.get<boolean>('DB_SYNCHRONIZE') ?? true,
                 }) as TypeOrmModuleOptions,
         }),
-        AuthModule,
     ],
-
     controllers: [AppController],
     providers: [AppService],
 })
